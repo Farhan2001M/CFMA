@@ -8,35 +8,19 @@ import Symptomtracker from "./pages/symptomtracker";
 import Home from "./pages/home";
 import Mainlayout from "./layouts/Mainlayout";
 import { ToastContainer, toast } from "react-toastify";
+import About from "./pages/about";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [active, setActive] = useState(-1);
-  // const [data, setData] = useState([]);
   const navigate = useNavigate();
 
   const [data, setData] = useState([]);
-  // setting active tab
 
   useEffect(() => {
     navigate("/");
-  }, []); // Empty // Include alarm in the dependency array
+  }, []);
 
-  // fetching data
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // Make a GET request to the /getData endpoint
-  //       const response = await axios.get("http://localhost:4000/getData");
-  //       setData(response.data);
-  //       console.log("response", response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   return (
     <Mainlayout active={active} setActive={setActive}>
@@ -44,6 +28,10 @@ function App() {
         <Route
           path="/"
           element={<Home active={active} setActive={setActive} />}
+        />
+          <Route
+          path="/about"
+          element={<About active={active} setActive={setActive} />}
         />
         <Route
           path="/datavisuals"

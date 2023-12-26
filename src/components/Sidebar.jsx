@@ -11,7 +11,8 @@ const Sidebar = ({ active, setActive }) => {
       name: "Dosage Tracker",
       link: "/dosagetracker",
     },
-    { name: "Data Visuals", link: "/datavisuals" },
+    // { name: "Data Visuals", link: "/datavisuals" },
+    { name: "About", link: "/about" },
   ];
 
   return (
